@@ -120,6 +120,30 @@
     }
     .btn-fire:hover { transform: scale(1.05); opacity: 0.9; }
 
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-login {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 50px;
+      border: 2px solid rgba(255,255,255,0.6);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
+      backdrop-filter: blur(4px);
+    }
+    .btn-login:hover { transform: scale(1.05); background: rgba(255,255,255,0.12); border-color: #fff; }
+
     .friday-hint {
       margin-top: 12px;
       font-size: 0.875rem;
@@ -300,7 +324,10 @@
       <p class="hero-desc">
         Tools video editing otomatis untuk YouTube Shorts, sosial media, dan konten kreator. Harga terjangkau, performa ringan.
       </p>
-      <a href="#products" class="btn-fire" id="cta-btn">🔥 Lihat Produk — Rp 100.000</a>
+      <div class="hero-btns">
+        <a href="#products" class="btn-fire" id="cta-btn">🔥 Lihat Produk — Rp 100.000</a>
+        <a href="login.html" class="btn-login">🔐 Login Member</a>
+      </div>
       <p class="friday-hint" id="friday-hint">
         🗓️ Setiap hari Jumat cukup <strong>Rp 50.000</strong> saja!
       </p>
