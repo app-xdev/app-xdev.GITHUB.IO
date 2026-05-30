@@ -31,7 +31,7 @@ const Index = () => {
       <section id="products" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-center text-foreground mb-4">
-            💻 Produk Kami
+            Produk Kami
           </h2>
           <p className="text-center text-muted-foreground font-body mb-12">
             Tools khusus PC. Harga terjangkau, fitur lengkap.
