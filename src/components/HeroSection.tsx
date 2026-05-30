@@ -14,7 +14,7 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-5xl md:text-7xl mb-2 animate-bounce inline-block">🏎️💨🔥</div>
+        <div className="text-5xl md:text-7xl mb-2 animate-bounce inline-block">🏎️</div>
         <p className="text-xl md:text-2xl font-black mb-4" style={{ color: '#ffd93d', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
           dan GASS!!! Jadi youtuber hebat dengan app
         </p>
@@ -57,13 +57,13 @@ const HeroSection = () => {
           }}
         >
           {isFriday
-            ? '🔥 Lihat Produk — Rp 50.000 (Promo Jumat!)'
-            : '🔥 Lihat Produk — Rp 100.000'}
+            ? 'Lihat Produk — Rp 50.000 (Promo Jumat!)'
+            : 'Lihat Produk — Rp 100.000'}
         </button>
 
         {!isFriday && (
           <p className="mt-3 text-sm font-semibold" style={{ color: '#ffd93d', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-            🗓️ Setiap hari Jumat cukup <strong>Rp 50.000</strong> saja!
+            Setiap hari Jumat cukup <strong>Rp 50.000</strong> saja!
           </p>
         )}
       </div>
