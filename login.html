@@ -1,140 +1,190 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Member Login — App-xdev Dapurngebul</title> <link rel="icon" href="public/favicon.ico" /> <meta name="robots" content="noindex, nofollow" /> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /> <style> * { box-sizing: border-box; margin: 0; padding: 0; }
- body {
- min-height: 100vh;
- background: #0a0a0a;
- color: #f0f0f0;
- font-family: 'Inter', sans-serif;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- padding: 20px;
- }
- .brand {
- text-align: center;
- margin-bottom: 28px;
- }
- .brand-icon { font-size: 3rem; line-height: 1; }
- .brand-name {
- font-size: 1.6rem;
- font-weight: 900;
- background: linear-gradient(90deg, #ff6a00, #ee0979, #a855f7, #3b82f6, #10b981);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- background-clip: text;
- margin-top: 4px;
- }
- .brand-tagline { color: #666; font-size: 0.78rem; margin-top: 4px; }
- .login-box {
- background: #161616;
- border: 1px solid #2a2a2a;
- border-radius: 18px;
- padding: 36px 32px;
- width: 100%;
- max-width: 400px;
- box-shadow: 0 24px 64px rgba(0,0,0,0.6);
- }
- .login-title { font-size: 1.25rem; font-weight: 700; text-align: center; margin-bottom: 4px; }
- .login-sub { text-align: center; color: #777; font-size: 0.82rem; margin-bottom: 28px; }
- /* Google Button */
- .btn-google {
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 12px;
- width: 100%;
- padding: 12px 20px;
- background: #fff;
- color: #3c4043;
- border: 1px solid #dadce0;
- border-radius: 8px;
- font-family: 'Inter', sans-serif;
- font-size: 0.92rem;
- font-weight: 500;
- cursor: pointer;
- text-decoration: none;
- transition: box-shadow 0.2s;
- margin-bottom: 22px;
- }
- .btn-google:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
- .g-icon { width: 20px; height: 20px; }
- .divider {
- display: flex;
- align-items: center;
- gap: 10px;
- color: #444;
- font-size: 0.78rem;
- margin-bottom: 20px;
- }
- .divider::before, .divider::after {
- content: '';
- flex: 1;
- height: 1px;
- background: #2a2a2a;
- }
- .form-group { margin-bottom: 14px; }
- .form-group label { display: block; font-size: 0.78rem; color: #aaa; font-weight: 600; margin-bottom: 6px; letter-spacing: 0.03em; }
- .form-group input {
- width: 100%;
- padding: 11px 14px;
- background: #0f0f0f;
- border: 1px solid #2a2a2a;
- border-radius: 8px;
- color: #f0f0f0;
- font-family: 'Inter', sans-serif;
- font-size: 0.92rem;
- outline: none;
- transition: border-color 0.2s;
- }
- .form-group input:focus { border-color: #ee0979; }
- .btn-masuk {
- width: 100%;
- padding: 13px;
- background: linear-gradient(135deg, #ff6a00, #ee0979);
- color: #fff;
- border: none;
- border-radius: 8px;
- font-family: 'Inter', sans-serif;
- font-size: 0.98rem;
- font-weight: 700;
- cursor: pointer;
- margin-top: 6px;
- transition: opacity 0.2s, transform 0.15s;
- }
- .btn-masuk:hover { opacity: 0.9; transform: scale(1.01); }
- .alert {
- margin-top: 14px;
- padding: 11px 14px;
- border-radius: 8px;
- font-size: 0.83rem;
- text-align: center;
- display: none;
- }
- .alert.error { background: #2d0a0a; border: 1px solid #7f1d1d; color: #fca5a5; display: block; }
- .alert.success { background: #022c22; border: 1px solid #065f46; color: #6ee7b7; display: block; }
- .back { text-align: center; margin-top: 22px; }
- .back a { color: #555; font-size: 0.78rem; text-decoration: none; }
- .back a:hover { color: #ee0979; }
- </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Login — App-xdev Dapurngebul</title>
+  <link rel="icon" href="public/favicon.ico" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .brand-icon { font-size: 3rem; line-height: 1; }
+    .brand-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff6a00, #ee0979, #a855f7, #3b82f6, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 4px;
+    }
+    .brand-tagline { color: #666; font-size: 0.78rem; margin-top: 4px; }
+    .login-box {
+      background: #161616;
+      border: 1px solid #2a2a2a;
+      border-radius: 18px;
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+    }
+    .login-title { font-size: 1.25rem; font-weight: 700; text-align: center; margin-bottom: 4px; }
+    .login-sub { text-align: center; color: #777; font-size: 0.82rem; margin-bottom: 28px; }
+    /* Google Button */
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 12px 20px;
+      background: #fff;
+      color: #3c4043;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+      margin-bottom: 22px;
+    }
+    .btn-google:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+    .g-icon { width: 20px; height: 20px; }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #444;
+      font-size: 0.78rem;
+      margin-bottom: 20px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #2a2a2a;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.78rem; color: #aaa; font-weight: 600; margin-bottom: 6px; letter-spacing: 0.03em; }
+    .form-group input {
+      width: 100%;
+      padding: 11px 14px;
+      background: #0f0f0f;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      color: #f0f0f0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus { border-color: #ee0979; }
+    .btn-masuk {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-masuk:hover { opacity: 0.9; transform: scale(1.01); }
+    .alert {
+      margin-top: 14px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 0.83rem;
+      text-align: center;
+      display: none;
+    }
+    .alert.error { background: #2d0a0a; border: 1px solid #7f1d1d; color: #fca5a5; display: block; }
+    .alert.success { background: #022c22; border: 1px solid #065f46; color: #6ee7b7; display: block; }
+    .back { text-align: center; margin-top: 22px; }
+    .back a { color: #555; font-size: 0.78rem; text-decoration: none; }
+    .back a:hover { color: #ee0979; }
+  </style>
 </head>
-<body> <div class="brand"> <div class="brand-icon"></div> <div class="brand-name">Dapurngebul</div> <div class="brand-tagline">App-xdev · Member Area</div> </div> <div class="login-box"> <div class="login-title">Login Member</div> <div class="login-sub">Masuk untuk akses area download eksklusif</div> <a href="#" class="btn-google" onclick="alert('Google Sign-In belum aktif. Silakan gunakan form di bawah.'); return false;"> <svg class="g-icon" viewBox="0 0 24 24"> <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/> <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/> <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/> <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/> </svg> Masuk dengan Google
- </a> <div class="divider">atau masuk dengan akun member</div> <form id="loginForm"> <div class="form-group"> <label>USERNAME</label> <input type="text" id="uname" placeholder="Masukkan username" autocomplete="username" required /> </div> <div class="form-group"> <label>PASSWORD</label> <input type="password" id="upass" placeholder="Masukkan password" autocomplete="current-password" required /> </div> <div id="alertBox" class="alert"></div> <button type="submit" class="btn-masuk">Masuk Sekarang →</button> </form> <div class="back"><a href="/">← Kembali ke Beranda</a></div> </div> <script> document.getElementById('loginForm').addEventListener('submit', function(e) {
- e.preventDefault();
- var u = document.getElementById('uname').value.trim();
- var p = document.getElementById('upass').value;
- var box = document.getElementById('alertBox');
- box.className = 'alert';
- if (u === 'member' && p === 'login') {
- box.className = 'alert success';
- box.textContent = ' Berhasil masuk! Mengalihkan...';
- sessionStorage.setItem('member_ok', '1');
- setTimeout(function(){ window.location.href = 'downloads.html'; }, 1000);
- } else {
- box.className = 'alert error';
- box.textContent = ' Username atau password salah. Coba lagi.';
- }
- });
- </script> </body>
+<body>
+
+  <div class="brand">
+    <div class="brand-icon">🏎️💨🔥</div>
+    <div class="brand-name">Dapurngebul</div>
+    <div class="brand-tagline">App-xdev · Member Area</div>
+  </div>
+
+  <div class="login-box">
+    <div class="login-title">🔐 Login Member</div>
+    <div class="login-sub">Masuk untuk akses area download eksklusif</div>
+
+    <a href="#" class="btn-google" onclick="alert('Google Sign-In belum aktif. Silakan gunakan form di bawah.'); return false;">
+      <svg class="g-icon" viewBox="0 0 24 24">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>
+      Masuk dengan Google
+    </a>
+
+    <div class="divider">atau masuk dengan akun member</div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label>USERNAME</label>
+        <input type="text" id="uname" placeholder="Masukkan username" autocomplete="username" required />
+      </div>
+      <div class="form-group">
+        <label>PASSWORD</label>
+        <input type="password" id="upass" placeholder="Masukkan password" autocomplete="current-password" required />
+      </div>
+      <div id="alertBox" class="alert"></div>
+      <button type="submit" class="btn-masuk">Masuk Sekarang →</button>
+    </form>
+
+    <div class="back"><a href="/">← Kembali ke Beranda</a></div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var u = document.getElementById('uname').value.trim();
+      var p = document.getElementById('upass').value;
+      var box = document.getElementById('alertBox');
+      box.className = 'alert';
+      if (u === 'member' && p === 'login') {
+        box.className = 'alert success';
+        box.textContent = '✅ Berhasil masuk! Mengalihkan...';
+        sessionStorage.setItem('member_ok', '1');
+        setTimeout(function(){ window.location.href = 'downloads.html'; }, 1000);
+      } else {
+        box.className = 'alert error';
+        box.textContent = '❌ Username atau password salah. Coba lagi.';
+      }
+    });
+  </script>
+
+</body>
 </html>
