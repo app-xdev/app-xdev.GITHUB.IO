@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /login.html
+Disallow: /downloads.html
 
 Sitemap: https://app-xdev.github.io/sitemap.xml
+Sitemap: https://app-xdev.github.io/post-sitemap.xml
